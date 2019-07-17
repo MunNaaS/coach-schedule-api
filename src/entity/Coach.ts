@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'
 import { Schedule } from './Schedule'
 
-@Entity()
+@Entity('coaches')
 export class Coach {
 
   @PrimaryGeneratedColumn()

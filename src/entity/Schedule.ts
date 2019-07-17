@@ -1,19 +1,20 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm'
 import { Coach } from './Coach'
 
-@Entity()
+@Entity('schedules')
 export class Schedule {
 
   @PrimaryGeneratedColumn()
   id: number
 
-  @ManyToOne(type => Coach, coach => coach.schedules)
+  @ManyToOne(type => Coach)
+  @JoinColumn({ name: 'coache_id' })
   coach: Coach
 
-  @Column()
-  startDate: string
+  @Column({ name: 'start_date' })
+  startDate: Date
 
-  @Column()
-  endDate: string
+  @Column({ name: 'end_date' })
+  endDate: Date
 
 }

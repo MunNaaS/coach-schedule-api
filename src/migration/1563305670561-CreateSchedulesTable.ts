@@ -10,6 +10,8 @@ export class CreateSchedulesTable1563305670561 implements MigrationInterface {
           name: 'id',
           type: 'int',
           isPrimary: true,
+          isGenerated: true,
+          generationStrategy: 'increment',
         },
         {
           name: 'coache_id',
@@ -30,7 +32,6 @@ export class CreateSchedulesTable1563305670561 implements MigrationInterface {
       columnNames: ['coache_id'],
       referencedColumnNames: ['id'],
       referencedTableName: 'coaches',
-      onDelete: 'CASCADE',
     }))
   }
 

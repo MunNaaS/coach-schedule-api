@@ -10,6 +10,8 @@ export class CreateCoachesTable1563305652265 implements MigrationInterface {
           name: 'id',
           type: 'int',
           isPrimary: true,
+          isGenerated: true,
+          generationStrategy: 'increment',
         },
         {
           name: 'name',
